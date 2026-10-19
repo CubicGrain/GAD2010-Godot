@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bijrancx2iw2d"]
+
+[ext_resource type="Texture2D" uid="uid://bdosdb1qiq15g" path="res://template_content/sprites/spritesheet-tiles-default.png" id="1_i22yo"]
+[ext_resource type="Script" uid="uid://dexoxr3uco4vw" path="res://addons/gad2010interaction/core/interaction_area_2d.gd" id="2_4j7h4"]
+[ext_resource type="Script" uid="uid://d182ka7jx8rbo" path="res://addons/gad2010interaction/core/interaction.gd" id="3_gx7vs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lwunx"]
+friction = 0.5
+bounce = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tuwn"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04ewl"]
+atlas = ExtResource("1_i22yo")
+region = Rect2(1024, 1088, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2tuwn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04ewl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2tuwn"]
+radius = 64.0
+
+[node name="Physics Interactable" type="RigidBody2D" unique_id=557970429]
+physics_material_override = SubResource("PhysicsMaterial_lwunx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1148493844]
+shape = SubResource("RectangleShape2D_2tuwn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=110058766]
+sprite_frames = SubResource("SpriteFrames_2tuwn")
+
+[node name="InteractionArea2D" type="Area2D" parent="." unique_id=685012710]
+script = ExtResource("2_4j7h4")
+metadata/_custom_type_script = "uid://dexoxr3uco4vw"
+
+[node name="Interaction" type="Node" parent="InteractionArea2D" unique_id=350240250]
+script = ExtResource("3_gx7vs")
+enabled = false
+metadata/_custom_type_script = "uid://d182ka7jx8rbo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea2D" unique_id=701003809]
+shape = SubResource("CircleShape2D_2tuwn")

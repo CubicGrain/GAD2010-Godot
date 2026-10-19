@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0q8uoh1n8hcy"]
 
-[ext_resource type="Script" uid="uid://tg0evwiyjo34" path="res://content/scripts/interaction_orb.gd" id="1_f5gdc"]
+[ext_resource type="Script" uid="uid://tg0evwiyjo34" path="res://content/scripts/grapple_point.gd" id="1_f5gdc"]
 [ext_resource type="Script" uid="uid://dexoxr3uco4vw" path="res://addons/gad2010interaction/core/interaction_area_2d.gd" id="2_ap02v"]
 [ext_resource type="Script" uid="uid://d182ka7jx8rbo" path="res://addons/gad2010interaction/core/interaction.gd" id="3_ncx0w"]
 [ext_resource type="Texture2D" uid="uid://bdosdb1qiq15g" path="res://template_content/sprites/spritesheet-tiles-default.png" id="4_cinsq"]
@@ -23,7 +23,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Interaction Orb" type="Node2D" unique_id=208723648]
+[node name="Grapple Point" type="Node2D" unique_id=208723648]
 script = ExtResource("1_f5gdc")
 
 [node name="InteractionArea2D" type="Area2D" parent="." unique_id=590162334]
