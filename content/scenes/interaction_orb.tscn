@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://d0q8uoh1n8hcy"]
+
+[ext_resource type="Script" uid="uid://tg0evwiyjo34" path="res://content/scripts/interaction_orb.gd" id="1_f5gdc"]
+[ext_resource type="Script" uid="uid://dexoxr3uco4vw" path="res://addons/gad2010interaction/core/interaction_area_2d.gd" id="2_ap02v"]
+[ext_resource type="Script" uid="uid://d182ka7jx8rbo" path="res://addons/gad2010interaction/core/interaction.gd" id="3_ncx0w"]
+[ext_resource type="Texture2D" uid="uid://bdosdb1qiq15g" path="res://template_content/sprites/spritesheet-tiles-default.png" id="4_cinsq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w6f38"]
+radius = 128.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7yaf"]
+atlas = ExtResource("4_cinsq")
+region = Rect2(768, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6f38"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7yaf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Interaction Orb" type="Node2D" unique_id=208723648]
+script = ExtResource("1_f5gdc")
+
+[node name="InteractionArea2D" type="Area2D" parent="." unique_id=590162334]
+script = ExtResource("2_ap02v")
+metadata/_custom_type_script = "uid://dexoxr3uco4vw"
+
+[node name="Interaction" type="Node" parent="InteractionArea2D" unique_id=380838443]
+script = ExtResource("3_ncx0w")
+metadata/_custom_type_script = "uid://d182ka7jx8rbo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea2D" unique_id=1732308192]
+shape = SubResource("CircleShape2D_w6f38")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="InteractionArea2D" unique_id=347127253]
+sprite_frames = SubResource("SpriteFrames_w6f38")
+
+[connection signal="short_interaction" from="InteractionArea2D/Interaction" to="." method="_on_short_interaction"]
