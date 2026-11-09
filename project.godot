@@ -68,6 +68,16 @@ interact={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Ground"
+2d_physics/layer_2="Player-Only"
+2d_physics/layer_3="Physics-Only"
+2d_physics/layer_4="Player"
+2d_physics/layer_5="Physics Blocks"
+2d_physics/layer_6="Passable Physics Props"
+2d_physics/layer_7="Interaction"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

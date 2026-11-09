@@ -103,6 +103,8 @@ bg_color = Color(0.147754, 0.658548, 0.19062, 1)
 size = Vector2(86, 110)
 
 [node name="Gad2010Character" type="CharacterBody2D" unique_id=1157659819]
+collision_layer = 8
+collision_mask = 19
 script = ExtResource("1_ul16g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=254405756]
@@ -129,6 +131,8 @@ show_percentage = false
 
 [node name="Interactor2D" type="Area2D" parent="." unique_id=567107475 node_paths=PackedStringArray("instigator")]
 position = Vector2(0, -48)
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("4_6cdsv")
 instigator = NodePath("..")
 metadata/_custom_type_script = "uid://cmgy5tw8nlv8q"

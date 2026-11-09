@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dj6b1edsqerva"]
+[gd_scene format=3 uid="uid://dj6b1edsqerva"]
 
 [ext_resource type="Script" uid="uid://dou3x38c1p7pe" path="res://template_content/scripts/long_press_button.gd" id="1_krn4f"]
 [ext_resource type="Script" uid="uid://d182ka7jx8rbo" path="res://addons/gad2010interaction/core/interaction.gd" id="2_1ej1i"]
@@ -25,7 +25,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ipm2g")
 }],
-"loop": true,
+"loop": 1,
 "name": &"active_pressed",
 "speed": 5.0
 }, {
@@ -33,7 +33,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kta5h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"active_up",
 "speed": 5.0
 }, {
@@ -41,16 +41,18 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7ptgf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"disabled",
 "speed": 5.0
 }]
 
-[node name="LongPressButton" type="Area2D"]
+[node name="LongPressButton" type="Area2D" unique_id=420995748]
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("1_krn4f")
 metadata/_custom_type_script = "uid://dexoxr3uco4vw"
 
-[node name="Interaction" type="Node" parent="."]
+[node name="Interaction" type="Node" parent="." unique_id=1466213980]
 script = ExtResource("2_1ej1i")
 interaction_type = 1
 one_shot = true
@@ -58,11 +60,11 @@ duration = 3.0
 progress_method = 2
 metadata/_custom_type_script = "uid://d182ka7jx8rbo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1592377186]
 position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_7wnaf")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1860278809]
 sprite_frames = SubResource("SpriteFrames_tia3k")
 animation = &"active_up"
 offset = Vector2(0, -32)

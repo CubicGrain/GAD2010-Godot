@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ugge72waq8s"]
+[gd_scene format=3 uid="uid://ugge72waq8s"]
 
 [ext_resource type="Script" uid="uid://c4h8jdka02frb" path="res://template_content/scripts/level_entry.gd" id="1_n4xb3"]
 [ext_resource type="Script" uid="uid://d182ka7jx8rbo" path="res://addons/gad2010interaction/core/interaction.gd" id="2_rp1qv"]
@@ -7,21 +7,23 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nph2c"]
 size = Vector2(64, 128)
 
-[node name="LevelEntry" type="Area2D"]
+[node name="LevelEntry" type="Area2D" unique_id=689744356]
 z_index = -1
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("1_n4xb3")
 level_path = "res://gym.tscn"
 metadata/_custom_type_script = "uid://dexoxr3uco4vw"
 
-[node name="Interaction" type="Node" parent="."]
+[node name="Interaction" type="Node" parent="." unique_id=1426996418]
 script = ExtResource("2_rp1qv")
 interaction_type = 1
 metadata/_custom_type_script = "uid://d182ka7jx8rbo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=512914789]
 shape = SubResource("RectangleShape2D_nph2c")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1491909242]
 texture = ExtResource("3_f8spi")
 region_enabled = true
 region_rect = Rect2(960, 128, 64, 128)

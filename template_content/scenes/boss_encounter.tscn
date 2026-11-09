@@ -471,3 +471,30 @@ position = Vector2(223, -194)
 
 [node name="Physics Interactable" parent="Core" unique_id=557970429 instance=ExtResource("5_vtr2w")]
 position = Vector2(1761, 32)
+
+[node name="Physics Interactable2" parent="Core" unique_id=193188970 instance=ExtResource("5_vtr2w")]
+position = Vector2(1952, 30)
+
+[node name="Physics Interactable3" parent="Core" unique_id=990221555 instance=ExtResource("5_vtr2w")]
+position = Vector2(2117, 31)
+
+[node name="Physics Interactable4" parent="Core" unique_id=1127361346 instance=ExtResource("5_vtr2w")]
+position = Vector2(2117, -40)
+
+[node name="Physics Interactable5" parent="Core" unique_id=1718650989 instance=ExtResource("5_vtr2w")]
+position = Vector2(1952, -41)
+
+[node name="Physics Interactable6" parent="Core" unique_id=589804912 instance=ExtResource("5_vtr2w")]
+position = Vector2(1760, -35)
+
+[node name="Physics Interactable7" parent="Core" unique_id=1119684 instance=ExtResource("5_vtr2w")]
+position = Vector2(1857, 21)
+
+[node name="Physics Interactable8" parent="Core" unique_id=1932292720 instance=ExtResource("5_vtr2w")]
+position = Vector2(2033, 30)
+
+[node name="Physics Interactable9" parent="Core" unique_id=376714933 instance=ExtResource("5_vtr2w")]
+position = Vector2(1956, -116)
+
+[node name="Physics Interactable10" parent="Core" unique_id=1374044535 instance=ExtResource("5_vtr2w")]
+position = Vector2(1672, 30)

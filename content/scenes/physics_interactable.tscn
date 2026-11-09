@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bijrancx2iw2d"]
 
+[ext_resource type="Script" uid="uid://ci42hypyha47k" path="res://content/scripts/physics_interactable.gd" id="1_4j7h4"]
 [ext_resource type="Texture2D" uid="uid://bdosdb1qiq15g" path="res://template_content/sprites/spritesheet-tiles-default.png" id="1_i22yo"]
 [ext_resource type="Script" uid="uid://dexoxr3uco4vw" path="res://addons/gad2010interaction/core/interaction_area_2d.gd" id="2_4j7h4"]
 [ext_resource type="Script" uid="uid://d182ka7jx8rbo" path="res://addons/gad2010interaction/core/interaction.gd" id="3_gx7vs"]
@@ -30,7 +31,10 @@ animations = [{
 radius = 64.0
 
 [node name="Physics Interactable" type="RigidBody2D" unique_id=557970429]
+collision_layer = 16
+collision_mask = 29
 physics_material_override = SubResource("PhysicsMaterial_lwunx")
+script = ExtResource("1_4j7h4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1148493844]
 shape = SubResource("RectangleShape2D_2tuwn")
@@ -39,13 +43,20 @@ shape = SubResource("RectangleShape2D_2tuwn")
 sprite_frames = SubResource("SpriteFrames_2tuwn")
 
 [node name="InteractionArea2D" type="Area2D" parent="." unique_id=685012710]
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("2_4j7h4")
 metadata/_custom_type_script = "uid://dexoxr3uco4vw"
 
 [node name="Interaction" type="Node" parent="InteractionArea2D" unique_id=350240250]
 script = ExtResource("3_gx7vs")
-enabled = false
 metadata/_custom_type_script = "uid://d182ka7jx8rbo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea2D" unique_id=701003809]
 shape = SubResource("CircleShape2D_2tuwn")
+
+[node name="HoldJoint" type="PinJoint2D" parent="." unique_id=1295883286]
+node_a = NodePath("..")
+angular_limit_enabled = true
+
+[connection signal="short_interaction" from="InteractionArea2D/Interaction" to="." method="_on_short_interaction"]
