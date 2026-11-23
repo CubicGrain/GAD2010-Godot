@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://du0afquaaqm42"]
+
+[ext_resource type="Script" uid="uid://ctqtwgsyms2g1" path="res://content/scripts/ability_orb.gd" id="1_jxc1o"]
+[ext_resource type="Texture2D" uid="uid://bdosdb1qiq15g" path="res://template_content/sprites/spritesheet-tiles-default.png" id="4_cbyul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7261"]
+atlas = ExtResource("4_cbyul")
+region = Rect2(768, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10hcy"]
+atlas = ExtResource("4_cbyul")
+region = Rect2(1088, 512, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6f38"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7261")
+}],
+"loop": 1,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10hcy")
+}],
+"loop": 1,
+"name": &"inactive",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwogv"]
+radius = 32.0
+
+[node name="AbilityOrb" type="Node2D" unique_id=208723648]
+script = ExtResource("1_jxc1o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=347127253]
+sprite_frames = SubResource("SpriteFrames_w6f38")
+animation = &"active"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=335016920]
+collision_layer = 64
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1211010865]
+shape = SubResource("CircleShape2D_qwogv")
+
+[node name="Timer" type="Timer" parent="." unique_id=485716138]
+one_shot = true
+
+[node name="Cooldown" type="Timer" parent="." unique_id=310489564]
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

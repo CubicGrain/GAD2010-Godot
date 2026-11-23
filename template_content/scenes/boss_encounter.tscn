@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bodpabxbh11ec" path="res://template_content/sprites/bg_texture.png" id="3_agx27"]
 [ext_resource type="PackedScene" uid="uid://d0q8uoh1n8hcy" path="res://content/scenes/grapple_point.tscn" id="4_y8acl"]
 [ext_resource type="PackedScene" uid="uid://bijrancx2iw2d" path="res://content/scenes/physics_interactable.tscn" id="5_vtr2w"]
+[ext_resource type="PackedScene" uid="uid://du0afquaaqm42" path="res://content/scenes/ability_orb.tscn" id="6_8c6rh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ou7w"]
 texture = ExtResource("2_fumtr")
@@ -498,3 +499,6 @@ position = Vector2(1956, -116)
 
 [node name="Physics Interactable10" parent="Core" unique_id=1374044535 instance=ExtResource("5_vtr2w")]
 position = Vector2(1672, 30)
+
+[node name="AbilityOrb" parent="." unique_id=1245017899 instance=ExtResource("6_8c6rh")]
+position = Vector2(2881, -349)
